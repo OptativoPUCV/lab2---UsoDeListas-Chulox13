@@ -62,3 +62,13 @@ exercises.c:49:10: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 c5cd209
+Wed 20 Mar 2024 02:23:49 PM UTC: 
+ exercises.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:51:18: error: expected expression before ‘int’
+   51 |     pushBack( L, int i);
+      |                  ^~~
+Compilation failed
+9afe45e
