@@ -2,3 +2,26 @@ Wed 20 Mar 2024 01:59:52 PM UTC:
  tests:  0|5
 total_score: 0/70
 737f50a
+Wed 20 Mar 2024 02:13:31 PM UTC: 
+ exercises.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:50:14: error: expected expression before ‘List’
+   50 |     pushBack(List *L, int i);
+      |              ^~~~
+exercises.c:50:5: error: too few arguments to function ‘pushBack’
+   50 |     pushBack(List *L, int i);
+      |     ^~~~~~~~
+In file included from exercises.c:6,
+                 from test.c:5:
+arraylist.h:20:6: note: declared here
+   20 | void pushBack(List *L, void *dato);
+      |      ^~~~~~~~
+In file included from test.c:5:
+exercises.c:49:10: error: unused variable ‘i’ [-Werror=unused-variable]
+   49 |     int* i = (int *)malloc(sizeof(int));
+      |          ^
+cc1: all warnings being treated as errors
+Compilation failed
+490c63d
