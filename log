@@ -107,3 +107,20 @@ exercises.c:64:7: error: variable ‘suma’ set but not used [-Werror=unused-bu
 cc1: all warnings being treated as errors
 Compilation failed
 6db7723
+Wed 20 Mar 2024 02:42:14 PM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘sumaLista’:
+exercises.c:66:8: error: assignment to ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   66 |   dato = first(L);
+      |        ^
+exercises.c:67:14: error: comparison between pointer and integer [-Werror]
+   67 |   while(dato != NULL)
+      |              ^~
+exercises.c:70:12: error: assignment to ‘int’ from ‘int *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   70 |       dato = (int*)next(L);
+      |            ^
+cc1: all warnings being treated as errors
+Compilation failed
+7d3a75a
