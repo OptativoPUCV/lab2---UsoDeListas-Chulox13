@@ -70,7 +70,7 @@ int sumaLista(List *L)
       dato = next(L);
       
     }
-   return 0;
+   return suma;
 }
 
 /*
