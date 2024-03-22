@@ -117,7 +117,7 @@ void copia_pila(Stack* P1, Stack* P2)
     push(P2, dato);
     
   }
-  free_stack(P3);
+  
   
   
 }
