@@ -235,3 +235,21 @@ Fri 22 Mar 2024 03:10:42 AM UTC:
  tests:  3|2
 total_score: 40/70
 eb7ded8
+Fri 22 Mar 2024 03:17:34 AM UTC: 
+ exercises.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:119:16: error: passing argument 1 of ‘pop’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  119 |     dato = pop(&P3);
+      |                ^~~
+      |                |
+      |                Stack ** {aka List **}
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:17:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Stack **’ {aka ‘List **’}
+   17 | void *pop(Stack *stack) { return popFront(stack); }
+      |           ~~~~~~~^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0da94ca
