@@ -377,3 +377,14 @@ exercises.c:150:23: error: comparison between pointer and integer [-Werror]
 cc1: all warnings being treated as errors
 Compilation failed
 13aceb9
+Sat 23 Mar 2024 11:46:33 PM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:163:1: error: control reaches end of non-void function [-Werror=return-type]
+  163 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+1973e07
