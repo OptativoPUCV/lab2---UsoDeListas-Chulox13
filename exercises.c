@@ -112,7 +112,7 @@ void copia_pila(Stack* P1, Stack* P2)
   {
     push(P3, dato);
     pop(P1);
-    dato = next(dato);
+    
       
   }
   while(dato != NULL)
@@ -161,4 +161,3 @@ int parentesisBalanceados(char *cadena)
   
    return 0;
 }
-
