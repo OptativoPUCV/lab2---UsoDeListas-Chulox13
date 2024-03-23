@@ -388,3 +388,18 @@ exercises.c:163:1: error: control reaches end of non-void function [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 1973e07
+Sat 23 Mar 2024 11:46:49 PM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c:163:1: error: expected identifier or ‘(’ before ‘}’ token
+  163 | }
+      | ^
+test.c: In function ‘test_parentesis_balanceados’:
+test.c:217:9: error: implicit declaration of function ‘parentesisBalanceados’; did you mean ‘test_parentesis_balanceados’? [-Werror=implicit-function-declaration]
+  217 |     if(!parentesisBalanceados(s)){
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         test_parentesis_balanceados
+cc1: all warnings being treated as errors
+Compilation failed
+da65c9c
