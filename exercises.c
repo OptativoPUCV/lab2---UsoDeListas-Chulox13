@@ -133,11 +133,12 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena) 
 {
+  Stack* pila = create_stack();
   for (; *cadena != '\0'; cadena++) {
       if (*cadena == '(' || *cadena == '[' || *cadena == '{') {
-          push(*pila, cadena);
+          push(pila, cadena);
       } else if (*cadena == ')' || *cadena == ']' || *cadena == '}') {
-          if (top(*pila) != NULL) {
+          if (top(pila) != NULL) {
               return 0; // Más paréntesis cerrados que abiertos
           }
 

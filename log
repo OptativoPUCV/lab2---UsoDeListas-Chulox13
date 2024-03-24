@@ -1926,3 +1926,9 @@ exercises.c:138:17: error: ‘pila’ undeclared (first use in this function)
 exercises.c:138:17: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 618dbd9
+Sun 24 Mar 2024 01:08:27 AM UTC: 
+ exercises.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+ tests:  4|1
+total_score: 50/70
+f32dc90
