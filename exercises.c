@@ -134,20 +134,22 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena) 
 {
   Stack* pila = create_stack();
-  for (; *cadena != '\0'; cadena++) {
-      if (*cadena == '(' || *cadena == '[' || *cadena == '{') {
-          push(pila, cadena);
-      } else if (*cadena == ')' || *cadena == ']' || *cadena == '}') {
-          if (top(pila) != NULL) {
-              return 1; // Más paréntesis cerrados que abiertos
-          }
+  for (; *cadena != '\0'; cadena++) 
+  {
+      if (*cadena == '(' || *cadena == '[' || *cadena == '{') 
+        push(pila, cadena);
+      else if (*cadena == ')' || *cadena == ']' || *cadena == '}') 
+      {
+        if (top(pila) != NULL) 
+          return 1; // Más paréntesis cerrados que abiertos
 
-          char *top = pop(pila);
-          if ((*cadena == ')' && *top != '(') ||
+        char *top = pop(pila);
+        if ((*cadena == ')' && *top != '(') ||
               (*cadena == ']' && *top != '[') ||
-              (*cadena == '}' && *top != '{')) {
-              return 0; // Paréntesis no coinciden
-          }
+              (*cadena == '}' && *top != '{')) 
+        {
+          return 0; // Paréntesis no coinciden
+        }
       }
   }
   if (pila == NULL)
