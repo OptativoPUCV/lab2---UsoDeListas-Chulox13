@@ -134,26 +134,26 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena) 
 {
   Stack* pila = create_stack();
-  for (; *cadena != '\0'; cadena++) 
-  {
-      if (*cadena == '(' || *cadena == '[' || *cadena == '{') 
-        push(pila, cadena);
-      else if (*cadena == ')' || *cadena == ']' || *cadena == '}') 
-      {
-        if (top(pila) != NULL) 
-          return 1; // Más paréntesis cerrados que abiertos
-
-        char *top = pop(pila);
-        if ((*cadena == ')' && *top != '(') ||
-              (*cadena == ']' && *top != '[') ||
-              (*cadena == '}' && *top != '{')) 
-        {
-          return 0; // Paréntesis no coinciden
-        }
+  Stack* pAux = create_stack();
+  int balanceados = 1;
+  int i = 0;
+  while (cadena[i] != '\0' && balanceados == 1) {
+      if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
+          char *temp = &cadena[i]; 
+          push(pAux, temp);
+      } else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
+          char dato = *(char*)pop(pAux);
+          if ((cadena[i] == ')' && dato != '(') ||
+              (cadena[i] == ']' && dato != '[') ||
+              (cadena[i] == '}' && dato != '{')) {
+              balanceados = 0;
+          }
       }
+      i++;
   }
-  if (pila == NULL)
-      return 1;
-    // Verificar si la pila está vacía después de recorrer
-  return 1; 
+  if (first(pAux) != NULL) {
+      balanceados = 0;
+  }
+  return balanceados;
+
 }
