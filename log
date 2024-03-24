@@ -488,3 +488,57 @@ stack.h:11:31: note: expected ‘void *’ but argument is of type ‘int’
 cc1: all warnings being treated as errors
 Compilation failed
 d9adfa2
+Sun 24 Mar 2024 12:00:22 AM UTC: 
+ exercises.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:112:12: error: passing argument 1 of ‘push’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  112 |       push(&P3, pop(P1));
+      |            ^~~
+      |            |
+      |            Stack ** {aka List **}
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Stack **’ {aka ‘List **’}
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |           ~~~~~~~^~~~~
+In file included from test.c:5:
+exercises.c:117:22: error: passing argument 1 of ‘pop’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  117 |       int dato = pop(&P3);
+      |                      ^~~
+      |                      |
+      |                      Stack ** {aka List **}
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:17:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Stack **’ {aka ‘List **’}
+   17 | void *pop(Stack *stack) { return popFront(stack); }
+      |           ~~~~~~~^~~~~
+In file included from test.c:5:
+exercises.c:117:18: error: initialization of ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  117 |       int dato = pop(&P3);
+      |                  ^~~
+exercises.c:118:16: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  118 |       push(P2, dato);
+      |                ^~~~
+      |                |
+      |                int
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘int’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:119:16: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  119 |       push(P1, dato); // Opcional: Restaura el orden original de P1
+      |                ^~~~
+      |                |
+      |                int
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘int’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+63942ad
