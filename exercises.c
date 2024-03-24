@@ -135,9 +135,9 @@ int parentesisBalanceados(char *cadena)
 {
   Stack* pila = create_stack();
   while (*cadena != '\0') {
-    if (*cadena == '(' || cadena == '[' || cadena == '{') {
+    if (*cadena == '(' || *cadena == '[' || *cadena == '{') {
         push(pila, cadena);
-    } else if (cadena == ')' || cadena == ']' || cadena == '}') {
+    } else if (*cadena == ')' || *cadena == ']' || *cadena == '}') {
         // Verificar si la pila está vacía
         if (top(pila) != NULL) {
             return 0; // Más paréntesis cerrados que abiertos
