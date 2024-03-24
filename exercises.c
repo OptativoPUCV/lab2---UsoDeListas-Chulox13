@@ -154,6 +154,5 @@ int parentesisBalanceados(char *cadena)
   if (first(pAux) != NULL) {
       balanceados = 0;
   }
-  return balanceados;
-
+  return  balanceados;
 }
