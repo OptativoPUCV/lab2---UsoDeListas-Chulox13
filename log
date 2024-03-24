@@ -1834,3 +1834,29 @@ Sun 24 Mar 2024 01:05:10 AM UTC:
  tests:  4|1
 total_score: 50/70
 5a67320
+Sun 24 Mar 2024 01:06:36 AM UTC: 
+ exercises.c | 19 +++++++------------
+ 1 file changed, 7 insertions(+), 12 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:138:17: error: ‘pila’ undeclared (first use in this function)
+  138 |           push(&pila, *cadena);
+      |                 ^~~~
+exercises.c:138:17: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:138:23: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  138 |           push(&pila, *cadena);
+      |                       ^~~~~~~
+      |                       |
+      |                       char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:140:15: error: implicit declaration of function ‘isEmpty’ [-Werror=implicit-function-declaration]
+  140 |           if (isEmpty(&pila)) {
+      |               ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+bd9a5b2
