@@ -1787,3 +1787,20 @@ exercises.c:147:20: error: initialization of ‘char’ from ‘void *’ makes 
 cc1: all warnings being treated as errors
 Compilation failed
 3d3bd39
+Sun 24 Mar 2024 12:59:44 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:148:36: error: comparison between pointer and integer [-Werror]
+  148 |         if ((*cadena == ')' && top != '(') ||
+      |                                    ^~
+exercises.c:149:36: error: comparison between pointer and integer [-Werror]
+  149 |             (*cadena == ']' && top != '[') ||
+      |                                    ^~
+exercises.c:150:36: error: comparison between pointer and integer [-Werror]
+  150 |             (*cadena == '}' && top != '{')) {
+      |                                    ^~
+cc1: all warnings being treated as errors
+Compilation failed
+3c474f6

@@ -144,7 +144,7 @@ int parentesisBalanceados(char *cadena)
         }
 
         // Verificar el paréntesis correspondiente en la pila
-        char top = pop(pila);
+        char *top = pop(pila);
         if ((*cadena == ')' && top != '(') ||
             (*cadena == ']' && top != '[') ||
             (*cadena == '}' && top != '{')) {
