@@ -1904,3 +1904,14 @@ stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
 cc1: all warnings being treated as errors
 Compilation failed
 cbd565c
+Sun 24 Mar 2024 01:08:02 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:138:16: error: ‘pila’ undeclared (first use in this function)
+  138 |           push(pila, cadena);
+      |                ^~~~
+exercises.c:138:16: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+95f88c6
