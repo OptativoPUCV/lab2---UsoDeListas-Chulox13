@@ -135,16 +135,16 @@ int parentesisBalanceados(char *cadena)
 {
   for (; *cadena != '\0'; cadena++) {
       if (*cadena == '(' || *cadena == '[' || *cadena == '{') {
-          push(&pila, *cadena);
+          push(pila, *cadena);
       } else if (*cadena == ')' || *cadena == ']' || *cadena == '}') {
-          if (isEmpty(&pila)) {
+          if (top(pila) != NULL) {
               return 0; // Más paréntesis cerrados que abiertos
           }
 
-          char top = pop(&pila);
-          if ((*cadena == ')' && top != '(') ||
-              (*cadena == ']' && top != '[') ||
-              (*cadena == '}' && top != '{')) {
+          char *top = pop(pila);
+          if ((*cadena == ')' && *top != '(') ||
+              (*cadena == ']' && *top != '[') ||
+              (*cadena == '}' && *top != '{')) {
               return 0; // Paréntesis no coinciden
           }
       }
