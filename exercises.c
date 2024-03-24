@@ -133,27 +133,30 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena) 
 {
-  int contador_parentesis = 0;
-  int contador_corchetes = 0;
-  int contador_llaves = 0;
+  Stack* pila = create_stack();
+  while (*cadena != '\0') {
+    if (*cadena == '(' || cadena == '[' || cadena == '{') {
+        push(pila, cadena);
+    } else if (cadena == ')' || cadena == ']' || cadena == '}') {
+        // Verificar si la pila está vacía
+        if (top(pila) != NULL) {
+            return 0; // Más paréntesis cerrados que abiertos
+        }
 
-  for (; *cadena != '\0'; cadena++) 
-  {
-  switch (*cadena) {
-      case '(': contador_parentesis++; break;
-      case ')': contador_parentesis--; break;
-      case '[': contador_corchetes++; break;
-      case ']': contador_corchetes--; break;
-      case '{': contador_llaves++; break;
-      case '}': contador_llaves--; break;
-      default: break;
+        // Verificar el paréntesis correspondiente en la pila
+        char top = pop(pila);
+        if ((*cadena == ')' && top != '(') ||
+            (*cadena == ']' && top != '[') ||
+            (*cadena == '}' && top != '{')) {
+            return 0; // Paréntesis no coinciden
+        }
+    }
+    cadena++;
   }
 
-  }
-  if (contador_parentesis == 0 && contador_corchetes == 0 && contador_llaves == 0) 
-    return 1; 
-  else 
-    return 0;
+  // Verificar si la pila está vacía después de recorrer toda la cadena
+  return isEmpty(&pila);
 
+  
   return 0; 
 }
