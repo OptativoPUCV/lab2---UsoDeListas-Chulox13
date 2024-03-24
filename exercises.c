@@ -155,7 +155,8 @@ int parentesisBalanceados(char *cadena)
           }
       } else if (*cadena == '{') {
           contador_llaves++;
-      } else if (*cadena == '}') {
+      } else if (*cadena == '}') 
+      {
           contador_llaves--;
           if (contador_llaves < 0) {
               return 0; // Más llaves cerradas que abiertas
@@ -165,7 +166,7 @@ int parentesisBalanceados(char *cadena)
   }
 
   if (contador_parentesis == 0 && contador_corchetes == 0 && contador_llaves == 0) 
-    return 1; // T
+    return 1; 
   else 
     return 0;
 
