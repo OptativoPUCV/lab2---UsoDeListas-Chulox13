@@ -137,32 +137,15 @@ int parentesisBalanceados(char *cadena)
   int contador_corchetes = 0;
   int contador_llaves = 0;
 
-  while (*cadena != '\0') 
-  {
-      if (*cadena == '(') {
-          contador_parentesis++;
-      } else if (*cadena == ')') {
-          contador_parentesis--;
-          if (contador_parentesis < 0) {
-              return 0; // Más paréntesis cerrados que abiertos
-          }
-      } else if (*cadena == '[') {
-          contador_corchetes++;
-      } else if (*cadena == ']') {
-          contador_corchetes--;
-          if (contador_corchetes < 0) {
-              return 0; // Más corchetes cerrados que abiertos
-          }
-      } else if (*cadena == '{') {
-          contador_llaves++;
-      } else if (*cadena == '}') 
-      {
-          contador_llaves--;
-          if (contador_llaves < 0) {
-              return 0; // Más llaves cerradas que abiertas
-          }
-      }
-      cadena++;
+  for (; *cadena != '\0'; cadena++) {
+  switch (*cadena) {
+      case '(': contador_parentesis++; break;
+      case ')': contador_parentesis--; break;
+      case '[': contador_corchetes++; break;
+      case ']': contador_corchetes--; break;
+      case '{': contador_llaves++; break;
+      case '}': contador_llaves--; break;
+      default: break;
   }
 
   if (contador_parentesis == 0 && contador_corchetes == 0 && contador_llaves == 0) 
