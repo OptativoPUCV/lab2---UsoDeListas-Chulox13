@@ -155,8 +155,5 @@ int parentesisBalanceados(char *cadena)
   }
 
   // Verificar si la pila está vacía después de recorrer toda la cadena
-  return isEmpty(&pila);
-
-  
   return 0; 
 }
