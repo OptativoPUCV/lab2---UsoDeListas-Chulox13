@@ -1915,3 +1915,14 @@ exercises.c:138:16: error: ‘pila’ undeclared (first use in this function)
 exercises.c:138:16: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 95f88c6
+Sun 24 Mar 2024 01:08:09 AM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:138:17: error: ‘pila’ undeclared (first use in this function)
+  138 |           push(*pila, cadena);
+      |                 ^~~~
+exercises.c:138:17: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+618dbd9
