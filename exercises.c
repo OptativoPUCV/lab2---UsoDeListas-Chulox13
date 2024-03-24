@@ -139,7 +139,7 @@ int parentesisBalanceados(char *cadena)
           push(pila, cadena);
       } else if (*cadena == ')' || *cadena == ']' || *cadena == '}') {
           if (top(pila) != NULL) {
-              return 0; // Más paréntesis cerrados que abiertos
+              return 1; // Más paréntesis cerrados que abiertos
           }
 
           char *top = pop(pila);
