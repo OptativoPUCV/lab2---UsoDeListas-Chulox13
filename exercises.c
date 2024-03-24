@@ -163,9 +163,9 @@ int parentesisBalanceados(char *cadena)
       cadena++;
 
   if (contador_parentesis == 0 && contador_corchetes == 0 && contador_llaves == 0) 
-    return 1; // Todos los tipos de paréntesis están balanceados
+    return 1; // T
   else 
     return 0;
 
-  return 0;
+  return 0; 
 }
