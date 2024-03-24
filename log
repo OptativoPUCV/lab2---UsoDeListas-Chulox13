@@ -1993,3 +1993,9 @@ exercises.c:136:10: error: unused variable ‘pila’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 3283b0d
+Sun 24 Mar 2024 01:16:11 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  9|0
+total_score: 70/70
+6f638cd
