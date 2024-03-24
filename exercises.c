@@ -137,7 +137,8 @@ int parentesisBalanceados(char *cadena)
   int contador_corchetes = 0;
   int contador_llaves = 0;
 
-  for (; *cadena != '\0'; cadena++) {
+  for (; *cadena != '\0'; cadena++) 
+  {
   switch (*cadena) {
       case '(': contador_parentesis++; break;
       case ')': contador_parentesis--; break;
@@ -148,6 +149,7 @@ int parentesisBalanceados(char *cadena)
       default: break;
   }
 
+  }
   if (contador_parentesis == 0 && contador_corchetes == 0 && contador_llaves == 0) 
     return 1; 
   else 
