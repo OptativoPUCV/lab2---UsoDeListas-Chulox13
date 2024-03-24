@@ -146,7 +146,7 @@ int parentesisBalanceados(char *cadena)
           if ((*cadena == ')' && *top != '(') ||
               (*cadena == ']' && *top != '[') ||
               (*cadena == '}' && *top != '{')) {
-              return 0; // Paréntesis no coinciden
+              return 1; // Paréntesis no coinciden
           }
       }
   }
