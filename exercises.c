@@ -133,28 +133,39 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena) 
 {
-  /*Stack* P1 = create_stack();
-  int i = 0;
-  while(cadena[i] != '\0')
-    {
-      if (cadena[i] == '(')
-        push(P1, *cadena[i]);
+  int contador_parentesis = 0;
+  int contador_corchetes = 0;
+  int contador_llaves = 0;
 
-      else
-      {
-        if (cadena[i] == ')')
-        {
-          if (top(P1) == '(')
-            pop(P1);
-
-          else
-            return 0;
-
-          
-        }
-        
+  while (*cadena != '\0') {
+      if (*cadena == '(') {
+          contador_parentesis++;
+      } else if (*cadena == ')') {
+          contador_parentesis--;
+          if (contador_parentesis < 0) {
+              return 0; // Más paréntesis cerrados que abiertos
+          }
+      } else if (*cadena == '[') {
+          contador_corchetes++;
+      } else if (*cadena == ']') {
+          contador_corchetes--;
+          if (contador_corchetes < 0) {
+              return 0; // Más corchetes cerrados que abiertos
+          }
+      } else if (*cadena == '{') {
+          contador_llaves++;
+      } else if (*cadena == '}') {
+          contador_llaves--;
+          if (contador_llaves < 0) {
+              return 0; // Más llaves cerradas que abiertas
+          }
       }
-    }
-  */
-   return 0; 
+      cadena++;
+
+  if (contador_parentesis == 0 && contador_corchetes == 0 && contador_llaves == 0) 
+    return 1; // Todos los tipos de paréntesis están balanceados
+  else 
+    return 0;
+
+  return 0;
 }
